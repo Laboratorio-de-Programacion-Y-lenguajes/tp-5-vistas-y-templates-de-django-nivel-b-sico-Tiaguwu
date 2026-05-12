@@ -1,5 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} Mi portal de noticias {% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h1>{{ titulo|default:"Portal de Noticias" }}</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'publicaciones:inicio' %}">Inicio</a></li>
+                <li><a href="{% url 'publicaciones:lista_publicaciones' %}">Publicaciones</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <hr>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <hr>
+
+    <footer>
+        <p>&copy; TP5Lab Bleh</p>
+    </footer>
+
+</body>
+</html>
+
 <!-- 
-    TODO: Completar el template base del portal.
+    
 
     Requisitos:
     - Estructura HTML5 válida (<!DOCTYPE html>, <html>, <head>, <body>)
